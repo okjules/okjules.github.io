@@ -19,7 +19,12 @@ body, html {
   background-color: white !important;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+.bg-secondary:not(.navbar) {
+  border: 1px solid #333;
+}
+
+/* Parallax Effect */
+.bg-img1, .bg-imgA, .bg-imgB {
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
@@ -28,46 +33,39 @@ body, html {
   background-size: cover;
 
 }
-.bgimg-1 {
+.bg-img1 {
   background-image: url("../images/bg-img1.jpg");
   min-height: 100%;
 }
 
-.bgimg-2 {
-  background-image: url("../images/bg-img2.jpg");
-  min-height: 100%;
+.bg-imgA {
+  background-image: url("../images/bg-imgA.jpg");
+  min-height: 60%;
 }
 
-.bgimg-3 {
-  background-image: url("../images/bg-img3.jpg");
-  min-height: 100%;
+
+.bg-imgB {
+  background-image: url("../images/bg-imgB.jpg");
+  min-height: 60%;
 }
 
-.bgimg-4 {
-  background-image: url("../images/bg-img4.jpg");
-  min-height: 100%;
-}
-
-.caption {
+/* Parallax Caption*/
+.parallax-caption {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 40%;
   width: 100%;
   text-align: center;
   color: #000;
 }
 
-.caption span.border {
+.parallax-caption span.border {
   background-color: #111;
   color: #fff;
   padding: 18px;
   font-size: 25px;
   letter-spacing: 10px;
 }
-
-
-
-
 
 /* Navbar-Section */
 .navbar-brand {
@@ -80,23 +78,48 @@ body, html {
 
 /* About Me-Section */
 section.masthead {
-padding-top: 20px;
+padding-top: 30px;
+padding-bottom: 30px;
 }
 
 h2 {
-  padding: 0px 80px 40px;
+  padding: 20px 40px 20px;
+  font-size: 20px;
+  text-align: right;
 }
 
-img.img-fluid {
-  height: 20%;
-  width: 20%;
+.container-skills {
+    width: 100%;
+    background-color: #ddd;
 }
+
+.skills {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 20px;
+    color: white;
+}
+
+p.skill-name {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.html {width: 80%; background-color: #9C469A;}
+.css {width: 70%; background-color: #9C469A;}
+.js {width: 40%; background-color: #9C469A;}
+.wp {width: 60%; background-color: #9C469A;}
+.git {width: 50%; background-color: #9C469A;}
+
 
 /* CV-Section*/
 
-/*general*/
+/* General */
 #cv {
   color: #333 !important;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .timeline {
@@ -111,7 +134,7 @@ img.img-fluid {
   line-height: inherit;
 }
 
-/*item*/
+/* Item */
 .timeline-item {
   padding-left: 40px;
   position: relative;
@@ -121,7 +144,7 @@ img.img-fluid {
   padding-bottom: 10px;
 }
 
-/*date*/
+/* Date */
 .timeline-date {
   font-size: 12px;
   font-weight: 700px;
@@ -131,17 +154,19 @@ img.img-fluid {
   white-space: nowrap;
 }
 
-/*marker*/
+/* Marker */
 .timeline-marker {
   position: absolute;
   top: 0px;
   bottom: 0px;
   left: 0px;
   width: 15px;
+  border-bottom: 3px solid #9C469A
 }
 
+
 .timeline-marker::before {
-  background: #333;
+  background: #9C469A;
   border: 3px solid transparent;
   border-radius: 100%;
   content: "";
@@ -157,7 +182,7 @@ img.img-fluid {
 .timeline-marker::after {
   content: "";
   width: 3px;
-  background: #333;
+  background: #9C469A;
   display: block;
   position: absolute;
   top: 24px;
@@ -167,10 +192,11 @@ img.img-fluid {
 
 .timeline-item:not(.break):hover .timeline-marker:before {
   background: transparent;
-  border: 3px solid #333;
+  border: 3px solid #9C469A;
 }
 
-/*content*/
+
+/* Content */
 .timeline-content {
   padding-bottom: 40px;
 }
@@ -179,44 +205,8 @@ img.img-fluid {
   margin-bottom: 10px;
 }
 
-/*break*/
-.break {
-  padding: 0px;
-}
 
-.break .timeline-date {
-  display: none;
-}
-
-.break .timeline-marker::before {
-  background: transparent;
-  content: "";
-  width: 15px;
-  height: auto;
-  border: none;
-  border-radius: 0px;
-  top: -10px;
-  bottom: 30px;
-  position: absolute;
-  border-top: 3px solid green;
-  border-bottom: 3px solid blue;
-}
-
-.break .timeline-marker::after {
-  content: "";
-  height: 32px;
-  top:auto;
-}
-
-.break .timeline-content {
-  padding: 40px 0px 70px;
-}
-
-.break .timeline-title {
-  margin: 0px;
-}
-
-/*centering*/
+/* Centering */
 @media (min-width: 992px) {
   .timeline-centered,
   .timeline-centered .timeline-item,
@@ -262,8 +252,6 @@ img.img-fluid {
   }
 
 }
-
-
 
 /* Portfolio-Section */
 
